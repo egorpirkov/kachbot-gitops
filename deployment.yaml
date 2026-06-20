@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: nodejs-bot
 spec:
-  replicas: 1
+  replicas: 0
   selector:
     matchLabels:
       app: nodejs-bot
@@ -14,5 +14,14 @@ spec:
     spec:
       containers:
       - name: bot-container
-        image: node:20-alpine 
-        command: ["sh", "-c", "while true; do sleep 3600; done"]
+        image: kachbot:local 
+        imagePullPolicy: Never
+        volumeMounts:
+        - name: db-volume
+          mountPath: /app/data
+
+      volumes:
+      - name: db-volume
+        hostPath:
+          path: /root/kachbot/Training-tg-bot
+          type: Directory
