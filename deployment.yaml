@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: bot-container
-        image: kachbot:local 
+        image: ghcr.io/egorpirkov/training-tg-bot:latest
         imagePullPolicy: Never
         volumeMounts:
         - name: db-volume
