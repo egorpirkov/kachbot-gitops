@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
       - name: bot-container
-        image: ghcr.io/egorpirkov/Training-tg-bot:sha-5a7ffe0
+        image: ghcr.io/egorpirkov/training-tg-bot:sha-5a7ffe0
