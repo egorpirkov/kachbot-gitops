@@ -15,13 +15,3 @@ spec:
       containers:
       - name: bot-container
         image: ghcr.io/egorpirkov/training-tg-bot:latest
-        imagePullPolicy: Never
-        volumeMounts:
-        - name: db-volume
-          mountPath: /app/data
-
-      volumes:
-      - name: db-volume
-        hostPath:
-          path: /root/kachbot/Training-tg-bot
-          type: Directory
