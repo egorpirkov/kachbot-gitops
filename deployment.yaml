@@ -15,3 +15,9 @@ spec:
       containers:
       - name: bot-container
         image: ghcr.io/egorpirkov/training-tg-bot:sha-149c290
+        env:
+        - name: BOT_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: telegram-bot-secret
+              key: BOT_TOKEN
